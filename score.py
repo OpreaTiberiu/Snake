@@ -10,12 +10,15 @@ class Score(Turtle):
         self.color("white")
         self.goto(0, (screen_y / 2) - screen_y / 20)
         self.pencolor("white")
-        self.update()
+        self.show_score()
         self.hideturtle()
 
     def update(self):
-        self.clear()
         self.score += 1
+        self.show_score()
+
+    def show_score(self):
+        self.clear()
         self.write(f"Score: {self.score}",
                    font=("Arial", 30, "normal"),
                    align="center")
